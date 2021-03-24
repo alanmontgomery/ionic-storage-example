@@ -23,22 +23,46 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/" exact={true}>
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home" exact={true}>
-          <Home />
-        </Route>
-        <Route path="/message/:id">
-           <ViewMessage />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+import { useEffect } from 'react';
+import { createStore, get, set } from './data/IonicStorage';
+import { getMessages } from './data/messages';
+
+const App = () => {
+
+	useEffect(() => {
+
+		const setupStore = async () => {
+
+			await createStore("AlansDB");
+			const exists = await get("msgs");
+
+			if (!exists) {
+				
+				const msgs = getMessages();
+				set("msgs", msgs);
+			}
+		}
+
+		setupStore();
+	}, []);
+
+	return (
+		<IonApp>
+			<IonReactRouter>
+				<IonRouterOutlet>
+					<Route path="/" exact={true}>
+						<Redirect to="/home" />
+					</Route>
+					<Route path="/home" exact={true}>
+						<Home />
+					</Route>
+					<Route path="/message/:id">
+						<ViewMessage />
+					</Route>
+				</IonRouterOutlet>
+			</IonReactRouter>
+		</IonApp>
+	);
+}
 
 export default App;
