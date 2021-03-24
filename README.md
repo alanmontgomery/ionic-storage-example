@@ -1,6 +1,15 @@
 # ionic-storage-example
 An example of using Ionic Storage with React
 
+### Showcasing the following Ionic Storage functionality
+1. `new Storage()` with config
+2. `create()`
+3. `set()`
+4. `get()`
+5. `remove()`
+6. `clear()`
+7. Some custom functions for accessing arrays of objects
+
 > Based on the "list" Ionic React starter template
 
 - All `@ionic/storage` functionality is in `IonicStorage.js` within the data folder
