@@ -12,4 +12,4 @@ An example of using Ionic Storage with React
 
 **To reset: within DevTools > Application, delete the IndexedDB created. It will then be re-created and populated with fetched data.**
 
-Are you on Twitter? Lets connect [@93alan](https://twitter.com/93alan)
+Are you on Twitter? Lets connect <a href="http://twitter.com/93alan" target="_blank">@93alan</a>
