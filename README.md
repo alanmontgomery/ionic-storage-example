@@ -11,3 +11,5 @@ An example of using Ionic Storage with React
 - Upon "refresh", if the `msgs` key exists in Ionic Storage, this will be used instead of fetching
 
 **To reset: within DevTools > Application, delete the IndexedDB created. It will then be re-created and populated with fetched data.**
+
+Are you on Twitter? Lets connect [@93alan](https://twitter.com/93alan)
