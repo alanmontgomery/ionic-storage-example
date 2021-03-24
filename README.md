@@ -2,7 +2,7 @@
 An example of using Ionic Storage with React
 
 ### Showcasing the following Ionic Storage functionality
-1. `new Storage()` with config
+1. `new Storage()` with config using Drivers
 2. `create()`
 3. `set()`
 4. `get()`
