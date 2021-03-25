@@ -23,22 +23,20 @@ function ViewMessage() {
 
   	const saveEmail = async () => {
 
-    	await setObject("msgs", params.id, message);
-    	setShowToast({ show: true, message: "Email has been saved.", color: "primary" });
+		await setObject("msgs", params.id, message);
+		setShowToast({ show: true, message: "Email has been saved.", color: "primary" });
   	}
 
 	const removeEmail = async () => {
 
-    	await removeObject("msgs", params.id);
-    	setShowToast({ show: true, message: "Email has been removed.", color: "danger" });
+		await removeObject("msgs", params.id);
+		setShowToast({ show: true, message: "Email has been removed.", color: "danger" });
 		history.goBack();
   	}
 
   	const handleChange = (key, val) => {
 
-    	let tempMessage = { ...message };
-    	tempMessage[key] = val;
-    	setMessage(tempMessage);
+		setMessage({ ...message, [key]: val });
   	}
 
   	return (
